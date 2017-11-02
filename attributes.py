@@ -1,0 +1,31 @@
+# define user to get tweets for. accepts input from user
+user = tweepy.api.get_user(input("Please enter the twitter username: "))
+
+# Display basic details for twitter user name
+print (" ")
+print ("Basic information for", user.name)
+print ("Screen Name:", user.screen_name)
+print ("Name: ", user.name)
+print ("Twitter Unique ID: ", user.id)
+print ("Account created at: ", user.created_at)
+
+timeline = api.user_timeline(screen_name=user, include_rts=True, count=100)
+    for tweet in timeline:
+        print ("ID:", tweet.id)
+        print ("User ID:", tweet.user.id)
+        print ("Text:", tweet.text)
+        print ("Created:", tweet.created_at)
+        print ("Geo:", tweet.geo)
+        print ("Contributors:", tweet.contributors)
+        print ("Coordinates:", tweet.coordinates) 
+        print ("Favorited:", tweet.favorited)
+        print ("In reply to screen name:", tweet.in_reply_to_screen_name)
+        print ("In reply to status ID:", tweet.in_reply_to_status_id)
+        print ("In reply to status ID str:", tweet.in_reply_to_status_id_str)
+        print ("In reply to user ID:", tweet.in_reply_to_user_id)
+        print ("In reply to user ID str:", tweet.in_reply_to_user_id_str)
+        print ("Place:", tweet.place)
+        print ("Retweeted:", tweet.retweeted)
+        print ("Retweet count:", tweet.retweet_count)
+        print ("Source:", tweet.source)
+        print ("Truncated:", tweet.truncated)
